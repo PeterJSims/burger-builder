@@ -4,9 +4,6 @@ import classes from './BurgerIngredient.module.css';
 import PropTypes from 'prop-types';
 
 class BurgerIngredient extends Component {
-	// constructor(props) {
-	// 	super(props);
-	// }
 	render() {
 		let ingredient = null;
 
@@ -28,15 +25,16 @@ class BurgerIngredient extends Component {
 			case 'cheese':
 				ingredient = <div className={classes.Cheese} />;
 				break;
-			case 'salad':
-				ingredient = <div className={classes.Salad} />;
-				break;
 			case 'bacon':
 				ingredient = <div className={classes.Bacon} />;
+				break;
+			case 'salad':
+				ingredient = <div className={classes.Salad} />;
 				break;
 			default:
 				ingredient = null;
 		}
+
 		return ingredient;
 	}
 }
@@ -44,4 +42,5 @@ class BurgerIngredient extends Component {
 BurgerIngredient.propTypes = {
 	type: PropTypes.string.isRequired
 };
+
 export default BurgerIngredient;
