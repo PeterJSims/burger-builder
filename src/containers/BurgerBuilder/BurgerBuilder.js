@@ -18,7 +18,7 @@ const INGREDIENT_PRICES = {
 class BurgerBuilder extends Component {
 	state = {
 		ingredients: null,
-		totalPrice: 3,
+		totalPrice: 4,
 		purchasable: false,
 		purchasing: false,
 		loading: false,
@@ -116,7 +116,7 @@ class BurgerBuilder extends Component {
 			disabledInfo[key] = disabledInfo[key] <= 0;
 		}
 		let orderSummary = null;
-		let burger = (this.state.error ? <p>Error showing ingredients </p> : <Spinner />)
+		let burger = this.state.error ? <p>Error showing ingredients </p> : <Spinner />;
 
 		if (this.state.ingredients) {
 			burger = (
