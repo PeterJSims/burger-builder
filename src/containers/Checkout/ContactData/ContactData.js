@@ -7,11 +7,58 @@ import Input from '../../../components/UI/Input/Input';
 
 class ContactData extends Component {
 	state = {
-		name: '',
-		email: '',
-		address: {
-			street: '',
-			zipCode: ''
+		orderForm: {
+			name: {
+				elementType: 'input',
+				elementConfig: {
+					type: 'text',
+					placeholder: 'Your Name'
+				},
+				value: ''
+			},
+			street: {
+				elementType: 'input',
+				elementConfig: {
+					type: 'text',
+					placeholder: 'Street'
+				},
+				value: ''
+			},
+			zipCode: {
+				elementType: 'input',
+				elementConfig: {
+					type: 'text',
+					placeholder: 'Your Zipcode'
+				},
+				value: ''
+			},
+			country: {
+				elementType: 'input',
+				elementConfig: {
+					type: 'text',
+					placeholder: 'Country'
+				},
+				value: ''
+			},
+			email: {
+				elementType: 'input',
+				elementConfig: {
+					type: 'email',
+					placeholder: 'Your Email '
+				},
+				value: ''
+			},
+			deliveryMethod: {
+				elementType: 'select',
+				elementConfig: {
+					options: [
+						{ value: 'fastest', displayValue: 'Fastest' },
+						{ value: 'cheapest', displayValue: 'Cheapest' }
+					]
+				},
+				value: ''
+			},
+			deliveryMethod: 'fastest'
 		},
 		loading: false
 	};
@@ -47,10 +94,10 @@ class ContactData extends Component {
 	render() {
 		let form = (
 			<form>
-				<Input inputtype="input" type="text" name="name" placeholder="Your Name" />
-				<Input inputtype="input" type="email" name="email" placeholder="Your Email" />
-				<Input inputtype="input" type="text" name="street" placeholder="Your Street Adress" />
-				<Input inputtype="input" type="text" name="zipCode" placeholder="Your Zipcode" />
+				<Input elementType="..." elementConfig="..." value="..." />
+				<Input elementType="..." elementConfig="..." value="..." />
+				<Input elementType="..." elementConfig="..." value="..." />
+				<Input elementType="..." elementConfig="..." value="..." />
 				<Button btnType="Success" clicked={this.orderHandler}>
 					ORDER NOW
 				</Button>
