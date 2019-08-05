@@ -94,6 +94,11 @@ class ContactData extends Component {
 		},
 		formIsValid: false
 	};
+	componentDidUpdate() {
+		if (this.props.purchased) {
+			this.props.history.replace('/');
+		}
+	}
 
 	orderHandler = (event) => {
 		event.preventDefault();
