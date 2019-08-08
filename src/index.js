@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
+
 import burgerBuilderReducer from './store/reducers/burgerBuilder';
+import './index.css';
+import App from './App';
 import orderReducer from './store/reducers/order';
 import authReducer from './store/reducers/auth';
 import * as serviceWorker from './serviceWorker';
-import thunk from 'redux-thunk';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
