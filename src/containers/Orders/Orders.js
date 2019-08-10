@@ -8,9 +8,13 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
 const Orders = (props) => {
-	useEffect(() => {
-		props.onFetchOrders(props.token, props.userId);
-	}, []);
+	const { onFetchOrders, token, userId } = props;
+	useEffect(
+		() => {
+			onFetchOrders(token, userId);
+		},
+		[ onFetchOrders, token, userId ]
+	);
 
 	let orders = <Spinner />;
 	if (!props.loading) {
